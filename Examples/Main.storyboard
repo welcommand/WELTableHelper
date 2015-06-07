@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="haha" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8uh-Ci-KaR">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="407"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="407" id="cXj-rr-DE4"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WELWordCell" id="4Am-Lb-LPJ" customClass="WELWordCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Am-Lb-LPJ" id="tLK-hd-8Ki">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS6-dO-hGS">
+                                                    <rect key="frame" x="20" y="11" width="560" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="qE3-dH-mFy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="lS6-dO-hGS" secondAttribute="centerY" id="Gm9-eg-UnT"/>
+                                                <constraint firstAttribute="trailing" secondItem="lS6-dO-hGS" secondAttribute="trailing" constant="20" id="WKf-8J-4mR"/>
+                                                <constraint firstItem="lS6-dO-hGS" firstAttribute="leading" secondItem="tLK-hd-8Ki" secondAttribute="leading" constant="20" id="Wjz-bE-BrZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="wordLabel" destination="lS6-dO-hGS" id="bn8-3G-bj1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ebh-OC-Dow" id="dGH-a9-m27"/>
+                                    <outlet property="delegate" destination="Nep-ub-2b9" id="3va-58-0KD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8uh-Ci-KaR" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="H35-3c-lxw"/>
+                            <constraint firstAttribute="trailing" secondItem="8uh-Ci-KaR" secondAttribute="trailing" id="TmT-AO-gGZ"/>
+                            <constraint firstItem="8uh-Ci-KaR" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Yoc-OA-K5T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataDelegate" destination="ebh-OC-Dow" id="bXp-kq-VN2"/>
+                        <outlet property="table" destination="8uh-Ci-KaR" id="AtY-4u-fy2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <customObject id="ebh-OC-Dow" customClass="WELDataSource">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="cellid" value="Cell"/>
+                        <userDefinedRuntimeAttribute type="string" keyPath="cellIdentifier" value="WELWordCell"/>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
+                <customObject id="Nep-ub-2b9" customClass="WELTableDelegate">
+                    <connections>
+                        <outlet property="viewController" destination="vXZ-lx-hvc" id="8YU-Yf-ONn"/>
+                    </connections>
+                </customObject>
+            </objects>
+        </scene>
+    </scenes>
+</document>
