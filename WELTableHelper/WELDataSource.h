@@ -13,7 +13,6 @@
 
 typedef void (^CellConfigureBefore)(id cell, id model, NSIndexPath * indexPath);
 
-
 IB_DESIGNABLE
 @interface WELDataSource : NSObject <UITableViewDataSource,UICollectionViewDataSource>
 
