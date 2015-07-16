@@ -25,6 +25,7 @@
     [super viewDidLoad];
     [_dataDelegate addModels:@[@"a",@"b",@"c",@"d"]];
     [_table reloadData];
+    _table.delegate = self;
 }
 
 
